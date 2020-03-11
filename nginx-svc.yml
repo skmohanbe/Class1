@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+      name: triva
+  name: hellongxsvc
+  namespace: default
+spec:
+  externalIPs:
+  - 18.237.100.108
+  ports:
+  - name: https
+    port: 80
+    nodePort: 30084
+    protocol: TCP
+    targetPort: 80
+  selector:
+     app: nginx
+  type: NodePort
